@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-const WA = 'https://chat.whatsapp.com/KCBhT4dBFWq8'
+const WA = 'https://chat.whatsapp.com/KCBhT4dBFWq8OFtL12O8PW'
 const START = new Date('2026-12-07T08:00:00+01:00')
 
 const MODS = [
@@ -216,12 +216,14 @@ export default function App() {
         <span className="kick" data-r>Perguntas frequentes</span>
         <h2 className="h2" data-r>Ficou alguma <em>dúvida?</em></h2>
         <div style={{ height: 40 }} />
-        {FAQ.map(([q, a], i) => (
-          <div key={q} className={'faq' + (open === i ? ' open' : '')} data-r>
-            <button aria-expanded={open === i} onClick={() => setOpen(open === i ? -1 : i)}><span>{q}</span><i /></button>
-            <div className="ans"><p>{a}</p></div>
-          </div>
-        ))}
+        <div data-r>
+          {FAQ.map(([q, a], i) => (
+            <div key={q} className={'faq' + (open === i ? ' open' : '')}>
+              <button aria-expanded={open === i} onClick={() => setOpen(open === i ? -1 : i)}><span>{q}</span><i /></button>
+              <div className="ans"><p>{a}</p></div>
+            </div>
+          ))}
+        </div>
       </div></section>
 
       <section className="final"><div className="curtain" /><div className="wrap" data-r>
